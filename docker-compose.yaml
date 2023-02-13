@@ -1,0 +1,19 @@
+version: '3'
+services:
+  nostr:
+    container_name: your_nostr_container_name
+    image: fluidtrack/nostr-relay:1
+    volumes:
+      - path/to/your/nostr/data:/opt/nostr-rs-relay/db
+      - path/to/your/config.toml:/opt/nostr-rs-relay.config.toml
+    environment:
+      - TZ=Asia/Kolkata
+      - APP_USER=yourname
+      - APP_DATA=path/to/your/container/folder/must/match/volume/path
+    networks:
+      - ext
+    restart: always
+# Uncomment the lines below and edit it to match the same network as your cloudflared docker container or nginx container
+#networks:
+#  ext:
+#    external: true
