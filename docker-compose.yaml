@@ -15,5 +15,5 @@ services:
     restart: always
 # Uncomment the lines below and edit it to match the same network as your cloudflared docker container or nginx container
 #networks:
-#  ext:
+#  your_docker_network_name:
 #    external: true
